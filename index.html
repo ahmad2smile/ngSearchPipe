@@ -1,0 +1,12 @@
+<input (keyup)="search($event)" type="text">
+<!-- or use two way binding -->
+<input [(ngModel)]="searchParam" type="text">
+
+<!-- search through as many as variables as you want i.e email, subject, message -->
+<div *ngFor="let item of items | searchFor: searchParam:'email':'subject':'message'">
+	<div>
+	    <div>{{ item.email }}</div>
+	    <div>{{ item.subject }}</div>
+	    <div>{{ item.message }}</div>
+	</div>
+</div>
